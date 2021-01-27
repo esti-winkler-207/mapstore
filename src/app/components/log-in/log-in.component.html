@@ -1,0 +1,31 @@
+
+<!-- <div>{{title}}</div> -->
+
+
+
+    
+
+<div class="ui-fluid p-text-right p-d-flex p-jc-center">
+
+    <form action="Log In" (ngSubmit)="isExist(name,password)">
+    
+    <p-card header="התחברות" style="float: right !important; vertical-align: auto !important;" styleClass="p-card-shadow p-shadow-20 p-mt-6">
+        <!-- <ng-template pTemplate="header">
+            <img alt="Card" src="assets/b3.jpg">
+        </ng-template> -->
+        <div class="p-field p-text-right p-d-flex p-flex-column">
+            <label class=" p-mb-2" for="firstname1">הכנס שם משתמש</label>
+        
+        <input class="p-mb-2" id="firstname1"  name="name" pInputText [(ngModel)]="name"  type="text"></div>
+        <div class="p-field p-text-right p-d-flex p-flex-column">
+            <label class="p-mb-2" for="pwd1">הכנס סיסמא</label>
+            
+            <input class="p-mb-2" hd="pwd1" name="password"  pInputText [(ngModel)]="password" type="password" ></div>
+       <ng-template pTemplate="footer" class="p-d-flex p-jc-center p-text-left">
+            <p-button type="submit" class="p-mr-2" label="המשך
+            " icon="pi pi-check"></p-button>
+           
+        </ng-template>
+    </p-card>
+    </form>
+    </div>

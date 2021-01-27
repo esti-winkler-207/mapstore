@@ -1,0 +1,37 @@
+
+<div class="ui-fluid p-text-right p-d-flex p-jc-center">
+
+    <p-card header="הרשמה"  StyleClass="p-card-shadow">
+       
+      <p class="p-text-right">:להרשמה לאתר אנא מלאו את הטופס</p>
+      <br>
+      
+      <div class="p-field p-text-right p-d-flex p-flex-column"> 
+          <label for="fn1" class="p-mb-2">שם פרטי</label>
+          <input class="p-mb-2" type="text" id="fn1" name="0" pInputText [(ngModel)]="p.Name" > 
+          </div>
+          <div class="p-field p-text-right p-d-flex p-flex-column">
+            <label for="mail" class="p-mb-2">מייל</label>
+            <input class="p-mb-2" id="mail" type="email" pInputText placeholder="" [(ngModel)]="p.Email" />
+          </div>
+          <div class="p-field p-text-right p-d-flex p-flex-column">
+            <label for="pwd" class="p-mb-2">סיסמא</label>
+            <input class="p-mb-2" id="pwd" type="password" pPassword [(ngModel)]="p.Pwd" />
+        </div>
+        <ng-template pTemplate="footer">
+        <p-button (click)="add()" type="submit" label="המשך
+        " icon="pi pi-check"></p-button> 
+    </ng-template>
+    </p-card>
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    

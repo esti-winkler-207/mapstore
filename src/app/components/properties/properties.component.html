@@ -1,0 +1,39 @@
+
+
+<div class="ui-fluid p-d-flex p-text-right p-d-flex p-jc-center">
+
+    <p-card header="פרטים על החנות"  StyleClass="p-card-shadow">
+       
+     
+      <br>
+      <img style="height: 40px;" src="assets/iconfinder_Winter_season_cold_Air_weather_wind_blow_4908737.png">
+      
+      <div class="p-field p-text-right p-d-flex p-flex-column"> 
+          
+          <input class="p-mb-2" type="text" id="fn1" name="0" placeholder="מזגן" pInputText [(ngModel)]="p.AC" > 
+          </div>
+          <img style="height: 40px;" src="assets/iconfinder_ELEVATOR_-transportation-doors-electronics-lift-hotel_5452482.png">
+         
+          <div class="p-field p-text-right p-d-flex p-flex-column">
+            
+            
+            <input class="p-mb-2" id="mail" type="text" pInputText placeholder="מעלית" [(ngModel)]="p.Eleveter" />
+          </div>
+           <img style="height: 40px;" src="assets/iconfinder_PARKING_SIGN-signaling-automobile-parking-signs-car_5452502.png">
+         
+          <div class="p-field p-text-right p-d-flex p-flex-column">
+            
+            <input class="p-mb-2" id="pwd" type="text" placeholder="חניה" pInputText [(ngModel)]="p.DParking" />
+        </div>
+        <ng-template pTemplate="footer">
+        <p-button (click)="foo()" type="submit" label="המשך" icon="pi pi-check"></p-button> 
+    </ng-template>
+    </p-card>
+    </div>
+    <img style="height: 50px;" src="assets/iconfinder_aiga_elevator_134185.svg">
+    <fa-icon style="color: brown;" size="lg" [icon]="faCoffee"></fa-icon>
+    <button pButton pRipple type="button" label="Primary" class="p-button-rounded"></button>
+    <img style="height: 50px;" src="assets/iconfinder_ELEVATOR_-transportation-doors-electronics-lift-hotel_5452482.png">
+    <button pButton pRipple type="button" icon="pi pi-user" class="p-button-rounded p-button-info"></button>
+   
+<!-- p-button-info -->
