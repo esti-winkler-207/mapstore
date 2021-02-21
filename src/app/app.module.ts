@@ -43,11 +43,12 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {PasswordModule} from 'primeng/password';
 import { RouterModule, Routes } from '@angular/router';
 import { mapToMapExpression } from '@angular/compiler/src/render3/util';
-
+import { GoogleMapsModule } from '@angular/google-maps'
 import { ButtonModule } from 'primeng/button';
 import { CardModule, } from 'primeng/card';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import {InputTextModule} from 'primeng/inputtext';
+import { Map3Component } from './components/map3/map3.component';
 
 
 
@@ -57,7 +58,8 @@ import {InputTextModule} from 'primeng/inputtext';
     FormComponent,
     LogInComponent,
     MapComponent,
-    PropertiesComponent
+    PropertiesComponent,
+    Map3Component
   ],
   imports: [
     BrowserModule,
@@ -81,7 +83,8 @@ ToastModule,
 CheckboxModule,
 DialogModule,
 TabViewModule,
-RippleModule
+RippleModule,
+GoogleMapsModule
   ],
   providers: [],
   bootstrap: [AppComponent],
