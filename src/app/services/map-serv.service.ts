@@ -9,7 +9,7 @@ import { Place } from '../place';
 export class MapServService {
 
   url:string="http://localhost:59435/api/place/"
-place1:Place=new Place()
+  place1:Place=new Place()
   constructor(private http:HttpClient) { }
   add(place:Place):Observable<Array<Place>>
   {

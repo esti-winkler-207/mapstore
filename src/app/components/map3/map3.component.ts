@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { GoogleMap } from '@angular/google-maps';
+import { Place } from 'src/app/place';
+import { MapServService } from 'src/app/services/map-serv.service';
 
 @Component({
   selector: 'app-map3',
@@ -7,8 +9,12 @@ import { GoogleMap } from '@angular/google-maps';
   styleUrls: ['./map3.component.css']
 })
 export class Map3Component implements OnInit {
+  name!:string
+  lat!:number
+  lng!:number
+  p!:Place
 
-  constructor() { }
+  constructor(private mapserv :MapServService) { }
 
   
  
@@ -17,9 +23,15 @@ export class Map3Component implements OnInit {
   this.initMap()
   
 }
-initMap() {
+initMap():void {
   // Create the map.
-  const pyrmont = { lat: -33.866, lng: 151.196 };
+  //app.component.ts:86 31.8232844 35.1940757
+  //app.component.ts:86 31.79412499999999 35.2100396
+  //31.79713229999999 35.2102238
+  //31.768379 35.184947
+  //32.068424 34.824785
+  //app.component.ts:86 32.083645 34.798119
+  const pyrmont = { lat: 32.083645, lng: 34.798119 };
   const map = new google.maps.Map(
     document.getElementById("map") as HTMLElement,
     {
@@ -44,7 +56,7 @@ initMap() {
 
   // Perform a nearby search.
   service.nearbySearch(
-    { location: pyrmont, radius: 500, type: "store" },
+    { location: pyrmont, radius: 1000, type: "store" },
     (
       results: google.maps.places.PlaceResult[] | null,
       status: google.maps.places.PlacesServiceStatus,
@@ -63,6 +75,7 @@ initMap() {
       }
     }
   );
+  return console.log("finish to init map!")
 }
 
  addPlaces(
@@ -73,6 +86,7 @@ initMap() {
 
   for (const place of places) {
     if (place.geometry && place.geometry.location) {
+      console.log(place);
       const image = {
         url: place.icon!,
         size: new google.maps.Size(71, 71),
@@ -90,11 +104,28 @@ initMap() {
 
       const li = document.createElement("li");
       li.textContent = place.name!;
+    
       placesList.appendChild(li);
 
       li.addEventListener("click", () => {
         map.setCenter(place.geometry!.location!);
       });
+      this.name=place.name!
+      this.lat=place.geometry.location.lat()
+      this.lng=place.geometry.location.lng()
+      this.p=new Place()
+      this.p.name=this.name;
+      this.p.lat=this.lat;
+      this.p.lan=this.lng;
+      this.mapserv.add(this.p).subscribe(
+        data=>{
+          console.log(data)
+        }
+        ,error=>{
+          console.error()
+        }
+      )
+
     }
   }
 }
